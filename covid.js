@@ -116,6 +116,8 @@ var refresh = schedule.scheduleJob("30 30 11 * * *", function () {
     function (error, response, body) {
       var xml = body;
 
+      console.log(body);
+
       parseString(body, function (err, result) {
         for (a = 0; a < 19; a++) {
           dt = result.response.body[0].items[0].item[a].createDt[0];
